@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Denfresh - a trusted professional cleaning brand built on performance, trust, and innovation. Delivering industrial-grade cleaning solutions across India.">
+    <title>About Denfresh - Professional Cleaning Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #D32F2F;
+            --dark-red: #B71C1C;
+            --accent-red: #C62828;
+            --white: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --text-dark: #212121;
+            --text-gray: #616161;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-red);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-red);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--primary-red);
+        }
+
+        .contact-btn {
+            background: var(--primary-red);
+            color: var(--white);
+            padding: 0.7rem 1.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+        }
+
+        .contact-btn:hover {
+            background: var(--dark-red);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(211, 47, 47, 0.4);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-red);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .page-hero {
+            margin-top: 80px;
+            height: 60vh;
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(135deg, rgba(211, 47, 47, 0.08), rgba(183, 28, 28, 0.12));
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-label {
+            display: inline-block;
+            color: var(--primary-red);
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            max-width: 800px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            line-height: 1.8;
+        }
+
+        .section {
+            padding: 5rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .company-overview {
+            background: var(--light-gray);
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .overview-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .overview-content p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .overview-image {
+            width: 100%;
+            height: 500px;
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .overview-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        .mv-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mv-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-red), var(--dark-red));
+        }
+
+        .mv-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-red);
+        }
+
+        .mv-card p {
+            font-size: 1.05rem;
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        .core-values {
+            background: var(--light-gray);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(211, 47, 47, 0.15);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--white);
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 8px 20px rgba(211, 47, 47, 0.3);
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .value-card p {
+            color: var(--text-gray);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .trust-section {
+            background: var(--white);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .trust-item {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .trust-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .trust-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-dark);
+        }
+
+        .trust-item p {
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -20%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 2rem;
+        }
+
+        .cta-btn {
+            background: var(--white);
+            color: var(--primary-red);
+            padding: 1.2rem 3rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+        }
+
+        .footer {
+            background: linear-gradient(135deg, var(--dark-red) 0%, #8B0000 100%);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo img {
+            height: 70px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: -0.5px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-column p {
+            line-height: 1.8;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            padding-left: 5px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+
+        .newsletter-form button {
+            padding: 0.8rem 1.5rem;
+            background: var(--white);
+            color: var(--primary-red);
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0.8;
+        }
+
+        .nav-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        @media (max-width: 968px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: var(--white);
+                flex-direction: column;
+                padding: 6rem 2rem 3rem;
+                transition: left 0.3s ease;
+                box-shadow: 2px 0 20px rgba(0,0,0,0.1);
+                align-items: flex-start;
+                overflow-y: auto;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 0.8rem 0;
+                width: 100%;
+            }
+
+            .nav-links .contact-btn {
+                display: block;
+                text-align: center;
+                margin-top: 1rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .mission-vision {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+
+            .overview-image {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-overlay"></div>
+
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Denfresh Logo">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html" class="contact-btn">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="hero-content">
+            <span class="hero-label">ABOUT DENFRESH</span>
+            <h1>Built on Performance, Trust, and Innovation</h1>
+            <p>Denfresh delivers professional-grade cleaning solutions engineered for demanding industrial and commercial environments.</p>
+        </div>
+    </section>
+
+    <section class="section company-overview">
+        <div class="section-container">
+            <div class="overview-grid">
+                <div class="overview-content reveal">
+                    <h2>Setting the Standard for Professional Cleaning</h2>
+                    <p>Denfresh has established itself as a leading provider of industrial and commercial cleaning solutions across India. Our commitment to quality, consistency, and reliability has made us the preferred partner for businesses that demand excellence.</p>
+                    <p>We specialize in developing high-performance cleaning products that meet the rigorous requirements of professional B2B environments. From healthcare facilities to manufacturing plants, our solutions are trusted to deliver superior results day after day.</p>
+                    <p>Built on decades of industry expertise and continuous innovation, Denfresh combines advanced formulations with sustainable practices to provide cleaning solutions that protect both your business and the environment.</p>
+                </div>
+                <div class="overview-image reveal">
+                    <img src="https://images.unsplash.com/photo-1581092918484-8313e1f6d34e?w=800" alt="Denfresh industrial facility">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-container">
+            <div class="mission-vision">
+                <div class="mv-card reveal">
+                    <h3>Mission</h3>
+                    <p>To deliver high-performance, safe, and effective cleaning solutions that empower businesses to maintain the highest standards of hygiene and operational excellence. We are committed to innovation, quality, and customer success in every product we create.</p>
+                </div>
+                <div class="mv-card reveal">
+                    <h3>Vision</h3>
+                    <p>To become the most trusted cleaning partner across industries in India and beyond, recognized for our unwavering commitment to quality, sustainability, and innovation. We aim to set new benchmarks in professional cleaning solutions that drive industry transformation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section core-values">
+        <div class="section-container">
+            <h2 class="section-title reveal">Core Values</h2>
+            <p class="section-subtitle reveal">The principles that guide every decision we make and every product we create.</p>
+            <div class="values-grid">
+                <div class="value-card reveal">
+                    <div class="value-icon">⚡</div>
+                    <h3>Innovation</h3>
+                    <p>Continuously advancing our formulations and technologies to deliver cutting-edge cleaning solutions that solve complex challenges and exceed industry expectations.</p>
+                </div>
+                <div class="value-card reveal">
+                    <div class="value-icon">🛡️</div>
+                    <h3>Safety</h3>
+                    <p>Prioritizing the health and safety of users and the environment through rigorous testing, compliance with international standards, and responsible product development.</p>
+                </div>
+                <div class="value-card reveal">
+                    <div class="value-icon">♻️</div>
+                    <h3>Sustainability</h3>
+                    <p>Developing eco-conscious products and practices that minimize environmental impact while delivering exceptional performance and long-term value.</p>
+                </div>
+                <div class="value-card reveal">
+                    <div class="value-icon">🤝</div>
+                    <h3>Customer Success</h3>
+                    <p>Building lasting partnerships by understanding unique needs, providing expert support, and ensuring every customer achieves their cleaning and operational goals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section trust-section">
+        <div class="section-container">
+            <h2 class="section-title reveal">Why Trust Denfresh</h2>
+            <p class="section-subtitle reveal">Proven excellence backed by experience, quality, and unwavering commitment to our partners.</p>
+            <div class="trust-grid">
+                <div class="trust-item reveal">
+                    <div class="trust-number">25+</div>
+                    <h4>Industry Experience</h4>
+                    <p>Over two decades of expertise in developing and delivering professional cleaning solutions for diverse industries across India.</p>
+                </div>
+                <div class="trust-item reveal">
+                    <div class="trust-number">100%</div>
+                    <h4>Quality Assurance</h4>
+                    <p>ISO certified manufacturing processes and rigorous quality control ensure every product meets the highest standards of performance and safety.</p>
+                </div>
+                <div class="trust-item reveal">
+                    <div class="trust-number">24/7</div>
+                    <h4>Professional Support</h4>
+                    <p>Dedicated technical support and expert consultation available around the clock to ensure your operations run smoothly without interruption.</p>
+                </div>
+                <div class="trust-item reveal">
+                    <div class="trust-number">500+</div>
+                    <h4>Long-term Partnerships</h4>
+                    <p>Trusted by hundreds of leading organizations who rely on Denfresh for consistent quality and reliable performance year after year.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Denfresh Logo">
+                </div>
+                <p>Leading the industry with innovative, sustainable cleaning solutions that set new standards for performance and environmental responsibility. Trusted by businesses across India for over two decades.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li>Email: info@denfresh.com</li>
+                    <li>Phone: +91 1800 123 4567</li>
+                    <li>Address: Mumbai, India</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Stay updated with the latest products and industry insights.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Denfresh. All rights reserved. Professional Cleaning Solutions.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navOverlay = document.querySelector('.nav-overlay');
+        const body = document.body;
+
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            
+            if (navLinks.classList.contains('active')) {
+                body.style.overflow = 'hidden';
+            } else {
+                body.style.overflow = '';
+            }
+        }
+
+        hamburger.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', toggleMenu);
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 968) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 968) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                navOverlay.classList.remove('active');
+                body.style.overflow = '';
+            }
+        });
+
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        document.querySelector('.newsletter-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = e.target.querySelector('input').value;
+            alert('Thank you for subscribing! We will keep you updated.');
+            e.target.reset();
+        });
+    </script>
+
+</body>
+</html>

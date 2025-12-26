@@ -3,205 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Denfresh - Premium Cleaning Products | Industrial & Commercial Solutions</title>
-    <meta name="description" content="Denfresh offers eco-friendly, ISO-certified cleaning products for industrial and commercial use. Browse our range of premium cleaning solutions made in India.">
-    <meta property="og:title" content="Denfresh - Premium Cleaning Products">
-    <meta property="og:description" content="Eco-friendly, ISO-certified cleaning products for industrial and commercial use. Made in India.">
-    <meta property="og:image" content="assets/ai-hero.jpg">
-    <meta property="og:type" content="website">
+    <meta name="description" content="Denfresh - Professional cleaning solutions for industrial, healthcare, and commercial environments. ISO certified, eco-friendly products made in India.">
+    <title>Denfresh - Professional Cleaning Solutions That Set Industry Standards</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --brand: #d90429;
-            --accent: #0b5cff;
-            --success: #10b981;
-            --muted: #6b7280;
-            --bg: #ffffff;
-            --text: #0f172a;
-            --text-light: #475569;
-            --border: #e2e8f0;
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
-            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
-            --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.15);
-            --radius: 1rem;
-            --radius-xl: 1.5rem;
-            --radius-2xl: 2rem;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        html { scroll-behavior: smooth; }
+
+        :root {
+            --primary-red: #D32F2F;
+            --dark-red: #B71C1C;
+            --accent-red: #C62828;
+            --white: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --text-dark: #212121;
+            --text-gray: #616161;
+        }
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            color: var(--text);
-            background: var(--bg);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
             line-height: 1.6;
             overflow-x: hidden;
         }
-        img { max-width: 100%; height: auto; display: block; }
-        a { text-decoration: none; color: inherit; }
-        button { font-family: inherit; cursor: pointer; border: none; }
-        .skip-link {
-            position: absolute; top: -40px; left: 0;
-            background: var(--brand); color: white;
-            padding: 0.75rem 1.5rem; z-index: 100;
-            border-radius: 0 0 var(--radius) 0; font-weight: 600;
-        }
-        .skip-link:focus { top: 0; outline: 3px solid var(--accent); outline-offset: 2px; }
-        *:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; }
-        
-        /* HEADER */
-        header {
-            position: fixed; top: 0; left: 0; right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px); z-index: 1000;
-            transition: var(--transition);
-            border-bottom: 1px solid transparent;
-        }
-        header.scrolled {
-            box-shadow: var(--shadow-md);
-            border-bottom-color: var(--border);
-        }
-        .container {
-            max-width: 1280px; margin: 0 auto; padding: 0 1.25rem;
-        }
-        .header-content {
-            display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0;
-        }
-        
-        /* LOGO WITH IMAGE SUPPORT */
-        .logo { 
-            display: flex; 
-            align-items: center; 
-            gap: 0.5rem; 
-            transition: var(--transition);
-        }
-        .logo:hover {
-            transform: translateY(-2px);
-        }
-        .logo-image {
-            height: 50px;
-            width: auto;
-            object-fit: contain;
-        }
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: 700;
+
+        h1, h2, h3, h4, h5, h6 {
             font-family: 'Poppins', sans-serif;
-            color: var(--brand);
-            display: none;
+            font-weight: 700;
         }
-        
-        /* Show text if no image */
-        .logo:not(:has(.logo-image)) .logo-text {
-            display: block;
-        }
-        
-        nav { display: none; gap: 2rem; align-items: center;}
-        nav a { 
-            font-weight: 500; 
-            color: var(--text); 
-            transition: var(--transition); 
-            position: relative;
-            padding: 0.5rem 0;
-        }
-        nav a:hover { color: var(--brand);}
-        nav a::after { 
-            content: ''; 
-            position: absolute; 
-            bottom: 0; 
-            left: 0; 
-            width: 0; 
-            height: 2px;
-            background: var(--brand); 
-            transition: width 0.3s ease;
-        }
-        nav a:hover::after { width: 100%;}
-        .cta-btn { 
-            background: var(--brand); 
-            color: white; 
-            padding: 0.75rem 1.75rem;
-            border-radius: var(--radius); 
-            font-weight: 600; 
-            transition: var(--transition); 
-            box-shadow: var(--shadow-sm);
-            white-space: nowrap;
-        }
-        .cta-btn:hover { 
-            background: #b8001c; 
-            box-shadow: var(--shadow-md); 
-            transform: translateY(-2px);
-        }
-        .mobile-toggle { 
-            display: block; 
-            background: transparent; 
-            padding: 0.5rem; 
-            z-index: 1001;
-        }
-        .hamburger { 
-            width: 28px; 
-            height: 20px; 
-            position: relative;
-            display: flex; 
-            flex-direction: column; 
-            justify-content: space-between;
-        }
-        .hamburger span { 
-            display: block; 
-            width: 100%; 
-            height: 3px; 
-            background: var(--text); 
-            border-radius: 2px; 
-            transition: var(--transition);
-        }
-        .mobile-toggle[aria-expanded="true"] .hamburger span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px);}
-        .mobile-toggle[aria-expanded="true"] .hamburger span:nth-child(2) { opacity: 0;}
-        .mobile-toggle[aria-expanded="true"] .hamburger span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px);}
-        .mobile-nav { 
-            display: none; 
-            position: fixed; 
-            top: 73px; 
-            left: 0; 
-            right: 0; 
-            background: white;
-            padding: 2rem; 
-            box-shadow: var(--shadow-lg); 
-            flex-direction: column; 
-            gap: 1.5rem;
-            max-height: calc(100vh - 73px);
-            overflow-y: auto;
-        }
-        .mobile-nav.active { display: flex;}
-        .mobile-nav a { 
-            font-weight: 500; 
-            font-size: 1.125rem; 
-            padding: 0.75rem 0; 
-            border-bottom: 1px solid var(--border);
-        }
-        main { margin-top: 73px;}
-        
-        /* HERO SLIDER */
-        .hero {
-            position: relative; 
-            min-height: 100vh; 
-            display: flex; 
-            align-items: center;
-            overflow: hidden;
-        }
-        .hero-slider {
-            position: absolute;
+
+        .header {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            z-index: 0;
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            z-index: 1000;
+            transition: all 0.3s ease;
         }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-red);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-red);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--primary-red);
+        }
+
+        .contact-btn {
+            background: var(--primary-red);
+            color: var(--white);
+            padding: 0.7rem 1.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+        }
+
+        .contact-btn:hover {
+            background: var(--dark-red);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(211, 47, 47, 0.4);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-red);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .hero-section {
+            margin-top: 80px;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-slider {
+            height: 100%;
+            position: relative;
+        }
+
         .hero-slide {
             position: absolute;
             top: 0;
@@ -209,94 +180,66 @@
             width: 100%;
             height: 100%;
             opacity: 0;
-            transition: opacity 2s ease-in-out;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
         }
+
         .hero-slide.active {
             opacity: 1;
-            animation: kenBurns 8s ease-out forwards;
+            animation: zoomEffect 8s ease-in-out;
         }
-        @keyframes kenBurns {
+
+        @keyframes zoomEffect {
             0% { transform: scale(1); }
-            100% { transform: scale(1.1); }
+            50% { transform: scale(1.08); }
+            100% { transform: scale(1); }
         }
-        .hero-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.7);
-        }
-        .hero-overlay {
+
+        .hero-slide::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(217, 4, 41, 0.4) 0%, rgba(11, 92, 255, 0.4) 100%);
-            z-index: 1;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.4) 100%);
         }
-        .slider-controls {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 3;
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
+
+        .slide-1 {
+            background-image: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1920');
         }
-        .slider-nav-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            font-size: 1.5rem;
+
+        .slide-2 {
+            background-image: url('https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=1920');
+        }
+
+        .slide-3 {
+            background-image: url('https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=1920');
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            height: 100%;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            transition: var(--transition);
-            cursor: pointer;
         }
-        .slider-nav-btn:hover {
-            background: rgba(255, 255, 255, 0.4);
-            transform: scale(1.1);
+
+        .hero-content h1 {
+            font-size: 4rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            max-width: 900px;
+            animation: fadeInUp 1s ease;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
         }
-        .slider-indicators {
-            display: flex;
-            gap: 12px;
-        }
-        .slider-indicator {
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.4);
-            border: 2px solid rgba(255, 255, 255, 0.6);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        .slider-indicator.active {
-            width: 40px;
-            border-radius: 10px;
-            background: white;
-        }
-        .hero-content { 
-            position: relative; 
-            z-index: 2; 
-            padding: 4rem 0;
-            text-align: center;
-        }
-        .hero h1 { 
-            font-family: 'Poppins', sans-serif; 
-            font-size: clamp(2rem, 5vw, 4.5rem); 
-            font-weight: 700; 
-            line-height: 1.1; 
-            margin-bottom: 1.25rem; 
-            color: white;
-            text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
-            animation: fadeInUp 1s ease-out;
-        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -307,1317 +250,1274 @@
                 transform: translateY(0);
             }
         }
-        .hero-tagline { 
-            font-size: clamp(1rem, 2.5vw, 1.5rem); 
-            color: white; 
-            margin-bottom: 2.5rem; 
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease 0.2s backwards;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            animation: fadeInUp 1s ease 0.4s backwards;
+        }
+
+        .btn-primary {
+            background: var(--primary-red);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(211, 47, 47, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(211, 47, 47, 0.5);
+            background: var(--dark-red);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border: 2px solid var(--white);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-red);
+            transform: translateY(-3px);
+        }
+
+        .slider-controls {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 3;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background: var(--white);
+            width: 35px;
+            border-radius: 6px;
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 3;
+            transition: all 0.3s ease;
+            font-size: 1.5rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .slider-arrow:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .arrow-left {
+            left: 2rem;
+        }
+
+        .arrow-right {
+            right: 2rem;
+        }
+
+        .trust-bar {
+            background: linear-gradient(135deg, var(--dark-red) 0%, var(--primary-red) 100%);
+            padding: 2rem 0;
+        }
+
+        .trust-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--white);
+        }
+
+        .trust-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .trust-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .trust-text p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .section {
+            padding: 5rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 4rem;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-            animation: fadeInUp 1s ease-out 0.2s backwards;
         }
-        .hero-ctas { 
-            display: flex; 
-            flex-wrap: wrap; 
-            gap: 1rem; 
-            margin-bottom: 3rem;
-            justify-content: center;
-            animation: fadeInUp 1s ease-out 0.4s backwards;
+
+        .why-denfresh-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
-        .btn-primary { 
-            background: var(--brand); 
-            color: white; 
-            padding: 1rem 2.5rem; 
-            border-radius: var(--radius); 
-            font-weight: 600; 
-            font-size: 1.125rem; 
-            transition: var(--transition); 
-            box-shadow: var(--shadow-md);
-        }
-        .btn-primary:hover { 
-            background: #b8001c; 
-            transform: translateY(-3px); 
-            box-shadow: var(--shadow-lg);
-        }
-        .btn-secondary { 
-            background: white; 
-            color: var(--brand); 
-            padding: 1rem 2.5rem; 
-            border-radius: var(--radius); 
-            font-weight: 600; 
-            font-size: 1.125rem; 
-            border: 2px solid white; 
-            transition: var(--transition);
-        }
-        .btn-secondary:hover { 
-            background: transparent; 
-            color: white; 
-            transform: translateY(-3px); 
-            box-shadow: var(--shadow-md);
-        }
-        .trust-badges { 
-            display: inline-flex; 
-            gap: 1.5rem; 
-            background: rgba(255,255,255, 0.15); 
-            backdrop-filter: blur(20px); 
-            padding: 1.5rem 2rem; 
-            border-radius: var(--radius-xl); 
-            box-shadow: var(--shadow-lg); 
-            flex-wrap: wrap;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            animation: fadeInUp 1s ease-out 0.6s backwards;
-            justify-content: center;
-        }
-        .badge { display: flex; align-items: center; gap: 0.75rem;}
-        .badge-icon { 
-            width: 48px; 
-            height: 48px; 
-            background: rgba(255, 255, 255, 0.2); 
-            backdrop-filter: blur(10px);
-            border-radius: 50%; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            color: white; 
-            font-weight: 700; 
-            font-size: 1.25rem;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-        .badge-text { 
-            font-weight: 600; 
-            color: white; 
-            font-size: 0.95rem;
-            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-        }
-        
-        /* ENHANCED SECTIONS */
-        section { padding: 5rem 0;}
-        .section-header { 
-            text-align: center; 
-            max-width: 800px; 
-            margin: 0 auto 4rem;
-        }
-        .section-header h2 { 
-            font-family: 'Poppins', sans-serif; 
-            font-size: clamp(2rem, 4vw, 3.5rem); 
-            margin-bottom: 1rem; 
-            color: var(--brand);
-            position: relative;
-            display: inline-block;
-        }
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--brand), var(--accent));
-            border-radius: 2px;
-        }
-        .section-header p { 
-            font-size: 1.125rem; 
-            color: var(--text-light);
-            margin-top: 1.5rem;
-        }
-        
-        /* WHY CHOOSE DENFRESH - ENHANCED */
-        #about {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+
+        .why-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
         }
-        #about::before {
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-red), var(--dark-red));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(211, 47, 47, 0.15);
+        }
+
+        .why-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 20px rgba(211, 47, 47, 0.3);
+        }
+
+        .why-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .why-card p {
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        .industry-solutions {
+            background: var(--light-gray);
+        }
+
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .industry-card {
+            position: relative;
+            height: 350px;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .industry-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+
+        .industry-card:hover::before {
+            background: linear-gradient(180deg, rgba(211, 47, 47, 0.7) 0%, rgba(183, 28, 28, 0.9) 100%);
+        }
+
+        .industry-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .industry-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .industry-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem;
+            z-index: 2;
+            color: var(--white);
+        }
+
+        .industry-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .industry-content p {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .industry-card:hover .industry-content p {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .product-highlight {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-slider-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .product-slide {
+            min-width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 500px;
+            background: var(--light-gray);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .product-info p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .product-features li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #E0E0E0;
+            color: var(--text-gray);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .product-features li::before {
+            content: '✓';
+            color: var(--primary-red);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .product-progress {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .progress-bar {
+            height: 4px;
+            flex: 1;
+            background: #E0E0E0;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-bar.active {
+            background: var(--primary-red);
+        }
+
+        .process-section {
+            background: var(--light-gray);
+        }
+
+        .process-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .process-line {
+            position: absolute;
+            left: 40px;
+            top: 60px;
+            width: 4px;
+            height: calc(100% - 120px);
+            background: linear-gradient(180deg, var(--primary-red) 0%, var(--dark-red) 100%);
+        }
+
+        .process-step {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 4rem;
+            position: relative;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.6s ease;
+        }
+
+        .process-step.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--white);
+            flex-shrink: 0;
+            box-shadow: 0 8px 25px rgba(211, 47, 47, 0.3);
+            z-index: 2;
+            position: relative;
+        }
+
+        .step-content {
+            flex: 1;
+            padding-top: 0.5rem;
+        }
+
+        .step-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-dark);
+        }
+
+        .step-content p {
+            color: var(--text-gray);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
             content: '';
             position: absolute;
             top: -50%;
-            right: -10%;
+            right: -20%;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(217, 4, 41, 0.05) 0%, transparent 70%);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 50%;
         }
-        #about::after {
+
+        .cta-section::after {
             content: '';
             position: absolute;
             bottom: -50%;
-            left: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(11, 92, 255, 0.05) 0%, transparent 70%);
+            left: -20%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 50%;
         }
-        .value-grid { 
-            display: grid; 
-            grid-template-columns: 1fr; 
-            gap: 2rem;
+
+        .cta-content {
             position: relative;
             z-index: 1;
         }
-        .value-card { 
-            background: white; 
-            padding: 3rem 2.5rem; 
-            border-radius: var(--radius-2xl); 
-            box-shadow: var(--shadow-md); 
-            transition: var(--transition); 
-            border: 1px solid var(--border);
-            position: relative;
-            overflow: hidden;
+
+        .cta-section h2 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 2rem;
         }
-        .value-card::before {
-            content: '';
-            position: absolute;
+
+        .cta-btn {
+            background: var(--white);
+            color: var(--primary-red);
+            padding: 1.2rem 3rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+        }
+
+        .footer {
+            background: linear-gradient(135deg, var(--dark-red) 0%, #8B0000 100%);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo img {
+            height: 70px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: -0.5px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-column p {
+            line-height: 1.8;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            padding-left: 5px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+
+        .newsletter-form button {
+            padding: 0.8rem 1.5rem;
+            background: var(--white);
+            color: var(--primary-red);
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0.8;
+        }
+
+        @media (max-width: 968px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: var(--white);
+                flex-direction: column;
+                padding: 6rem 2rem 3rem;
+                transition: left 0.3s ease;
+                box-shadow: 2px 0 20px rgba(0,0,0,0.1);
+                align-items: flex-start;
+                overflow-y: auto;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 0.8rem 0;
+                width: 100%;
+            }
+
+            .nav-links .contact-btn {
+                display: block;
+                text-align: center;
+                margin-top: 1rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .trust-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .product-slide {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .slider-arrow {
+                display: none;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+
+            .process-step {
+                gap: 1.5rem;
+            }
+
+            .step-number {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .process-line {
+                left: 30px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .trust-container {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .hero-buttons a {
+                width: 100%;
+                text-align: center;
+            }
+
+            .why-denfresh-grid,
+            .industry-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-overlay {
+            display: none;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--brand), var(--accent));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.5s ease;
-        }
-        .value-card:hover::before {
-            transform: scaleX(1);
-        }
-        .value-card:hover { 
-            transform: translateY(-10px); 
-            box-shadow: var(--shadow-xl);
-        }
-        .value-icon-wrapper {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 2rem;
-        }
-        .value-icon { 
-            width: 80px; 
-            height: 80px; 
-            background: linear-gradient(135deg, var(--brand), var(--accent)); 
-            border-radius: var(--radius-xl); 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            color: white; 
-            font-size: 2.5rem;
-            box-shadow: var(--shadow-md);
-            position: relative;
-            z-index: 1;
-        }
-        .value-icon-bg {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 80px;
-            height: 80px;
-            background: var(--accent);
-            opacity: 0.2;
-            border-radius: var(--radius-xl);
-            z-index: 0;
-        }
-        .value-card h3 { 
-            font-size: 1.75rem; 
-            margin-bottom: 1rem; 
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-        }
-        .value-card p { 
-            color: var(--text-light); 
-            line-height: 1.8;
-            font-size: 1.05rem;
-        }
-        
-        /* HOW IT WORKS - ENHANCED */
-        .how-it-works-section {
-            background: white;
-            position: relative;
-        }
-        .steps-grid { 
-            display: grid; 
-            grid-template-columns: 1fr; 
-            gap: 3rem; 
-            position: relative;
-        }
-        .step { 
-            display: flex; 
-            gap: 2rem; 
-            align-items: flex-start;
-            padding: 2.5rem;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            border-radius: var(--radius-2xl);
-            border: 2px solid var(--border);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-        .step::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 6px;
-            height: 100%;
-            background: linear-gradient(180deg, var(--brand), var(--accent));
+            height: 100vh;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-        .step:hover::before {
+
+        .nav-overlay.active {
+            display: block;
             opacity: 1;
-        }
-        .step:hover {
-            transform: translateX(10px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent);
-        }
-        .step-number-wrapper {
-            position: relative;
-            flex-shrink: 0;
-        }
-        .step-number { 
-            min-width: 80px; 
-            height: 80px; 
-            background: linear-gradient(135deg, var(--brand), var(--accent)); 
-            border-radius: 50%; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            color: white; 
-            font-size: 2rem; 
-            font-weight: 800; 
-            font-family: 'Poppins', sans-serif; 
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            z-index: 1;
-        }
-        .step-number::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            height: 100%;
-            background: white;
-            border-radius: 50%;
-            z-index: -1;
-            animation: pulse 2s ease-in-out infinite;
-        }
-        @keyframes pulse {
-            0%, 100% {
-                transform: translate(-50%, -50%) scale(1);
-                opacity: 0.3;
-            }
-            50% {
-                transform: translate(-50%, -50%) scale(1.2);
-                opacity: 0;
-            }
-        }
-        .step-content h3 { 
-            font-size: 1.75rem; 
-            margin-bottom: 1rem; 
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            color: var(--text);
-        }
-        .step-content p { 
-            color: var(--text-light); 
-            line-height: 1.8;
-            font-size: 1.05rem;
-        }
-        .step-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            opacity: 0.1;
-            position: absolute;
-            right: 20px;
-            bottom: 20px;
-        }
-        
-        /* PRODUCTS SECTION */
-        .products-section { 
-            background: linear-gradient(135deg, #fff1f1 0%, #e0f2fe 100%);
-        }
-        .products-carousel { position: relative; overflow: hidden;}
-        .products-track { display: flex; gap: 1.5rem; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);}
-        .product-card { 
-            min-width: 100%; 
-            background: white; 
-            border-radius: var(--radius-2xl); 
-            overflow: hidden; 
-            box-shadow: var(--shadow-lg); 
-            transition: var(--transition);
-        }
-        .product-card:hover { 
-            transform: translateY(-5px); 
-            box-shadow: var(--shadow-xl);
-        }
-        .product-image { 
-            width: 100%; 
-            height: 280px; 
-            object-fit: cover; 
-            background: linear-gradient(135deg, #f8fafd, #dbeafe);
-        }
-        .product-content { padding: 2rem;}
-        .product-category { 
-            color: var(--accent); 
-            font-size: 0.875rem; 
-            font-weight: 600; 
-            text-transform: uppercase; 
-            letter-spacing: 0.05em; 
-            margin-bottom: 0.5rem;
-        }
-        .product-card h3 { 
-            font-size: 1.5rem; 
-            margin-bottom: 0.75rem; 
-            font-family: 'Poppins', sans-serif;
-        }
-        .product-card p { 
-            color: var(--text-light); 
-            margin-bottom: 1.5rem;
-        }
-        .product-features { 
-            list-style: none; 
-            margin-bottom: 1.5rem;
-        }
-        .product-features li { 
-            padding: 0.5rem 0; 
-            padding-left: 1.75rem; 
-            position: relative; 
-            color: var(--text-light);
-        }
-        .product-features li::before { 
-            content: '✓'; 
-            position: absolute; 
-            left: 0; 
-            color: var(--accent); 
-            font-weight: 700;
-        }
-        .carousel-controls { 
-            display: flex; 
-            justify-content: center; 
-            gap: 1rem; 
-            margin-top: 2rem;
-        }
-        .carousel-btn { 
-            width: 48px; 
-            height: 48px; 
-            border-radius: 50%; 
-            background: white; 
-            box-shadow: var(--shadow-md); 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            transition: var(--transition); 
-            font-size: 1.25rem; 
-            color: var(--brand);
-        }
-        .carousel-btn:hover:not(:disabled) { 
-            background: var(--brand); 
-            color: white; 
-            transform: scale(1.1);
-        }
-        .carousel-btn:disabled { 
-            opacity: 0.3; 
-            cursor: not-allowed;
-        }
-        .carousel-dots { 
-            display: flex; 
-            justify-content: center; 
-            gap: 0.75rem; 
-            margin-top: 1.5rem;
-        }
-        .dot { 
-            width: 12px; 
-            height: 12px; 
-            border-radius: 50%; 
-            background: #cbd5e1; 
-            transition: var(--transition); 
-            cursor: pointer;
-        }
-        .dot.active { 
-            background: var(--brand); 
-            width: 32px; 
-            border-radius: 6px;
-        }
-        
-        /* RESOURCES */
-        .resources-grid { 
-            display: grid; 
-            grid-template-columns: 1fr; 
-            gap: 2rem;
-        }
-        .resource-card { 
-            background: white; 
-            border-radius: var(--radius-xl); 
-            overflow: hidden; 
-            box-shadow: var(--shadow-md); 
-            transition: var(--transition); 
-            display: flex; 
-            flex-direction: column;
-        }
-        .resource-card:hover { 
-            transform: translateY(-5px); 
-            box-shadow: var(--shadow-lg);
-        }
-        .resource-thumb { 
-            width: 100%; 
-            height: 200px; 
-            background: linear-gradient(135deg, #dbeafe, #bfdbfe); 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            font-size: 4rem; 
-            color: var(--brand);
-        }
-        .resource-content { 
-            padding: 1.75rem; 
-            flex-grow: 1; 
-            display: flex; 
-            flex-direction: column;
-        }
-        .resource-type { 
-            color: var(--accent); 
-            font-size: 0.875rem; 
-            font-weight: 600; 
-            text-transform: uppercase; 
-            letter-spacing: 0.05em; 
-            margin-bottom: 0.5rem;
-        }
-        .resource-card h3 { 
-            font-size: 1.25rem; 
-            margin-bottom: 0.75rem;
-        }
-        .resource-card p { 
-            color: var(--text-light); 
-            margin-bottom: 1.25rem; 
-            flex-grow: 1;
-        }
-        .download-link { 
-            color: var(--brand); 
-            font-weight: 600; 
-            display: inline-flex; 
-            align-items: center; 
-            gap: 0.5rem; 
-            transition: var(--transition);
-        }
-        .download-link:hover { 
-            color: var(--accent); 
-            gap: 0.75rem;
-        }
-        
-        /* NEWSLETTER */
-        .newsletter-section { 
-            background: linear-gradient(135deg, var(--brand), var(--accent)); 
-            color: white;
-        }
-        .newsletter-content { 
-            max-width: 700px; 
-            margin: 0 auto; 
-            text-align: center;
-        }
-        .newsletter-content h2 { 
-            font-family: 'Poppins', sans-serif; 
-            font-size: clamp(2rem, 4vw, 3rem); 
-            margin-bottom: 1rem;
-        }
-        .newsletter-content p { 
-            font-size: 1.125rem; 
-            margin-bottom: 2rem; 
-            opacity: 0.95;
-        }
-        .newsletter-form { 
-            display: flex; 
-            gap: 1rem; 
-            max-width: 500px; 
-            margin: 0 auto; 
-            flex-direction: column;
-        }
-        .newsletter-form input { 
-            flex: 1; 
-            padding: 1rem 1.5rem; 
-            border: none; 
-            border-radius: var(--radius); 
-            font-size: 1rem; 
-            outline: none;
-        }
-        .newsletter-form input:focus { 
-            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
-        }
-        .newsletter-form button { 
-            padding: 1rem 2.5rem; 
-            background: white; 
-            color: var(--brand); 
-            border-radius: var(--radius); 
-            font-weight: 600; 
-            font-size: 1rem; 
-            transition: var(--transition);
-        }
-        .newsletter-form button:hover { 
-            transform: translateY(-2px); 
-            box-shadow: var(--shadow-lg);
-        }
-        .form-message { 
-            margin-top: 1rem; 
-            font-weight: 500;
-        }
-        
-        /* FOOTER */
-        footer { 
-            background: var(--brand); 
-            color: white; 
-            padding: 4rem 0 2rem;
-        }
-        .footer-content { 
-            display: grid; 
-            grid-template-columns: 1fr; 
-            gap: 3rem; 
-            margin-bottom: 3rem;
-        }
-        .footer-brand { 
-            max-width: 350px;
-        }
-        .footer-brand .logo { 
-            color: white; 
-            margin-bottom: 1.25rem;
-        }
-        .footer-brand .logo-image {
-            filter: brightness(0) invert(1);
-        }
-        .footer-brand p { 
-            color: #f3f3f3; 
-            line-height: 1.7; 
-            margin-bottom: 1.5rem;
-        }
-        .social-links { 
-            display: flex; 
-            gap: 1rem;
-        }
-        .social-link { 
-            width: 44px; 
-            height: 44px; 
-            background: rgba(255,255,255,0.1); 
-            border-radius: 50%; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            transition: var(--transition); 
-            font-size: 1.25rem;
-        }
-        .social-link:hover { 
-            background: var(--accent); 
-            transform: translateY(-3px);
-        }
-        .footer-section h4 { 
-            font-size: 1.125rem; 
-            margin-bottom: 1.25rem; 
-            font-family: 'Poppins', sans-serif;
-        }
-        .footer-section ul { 
-            list-style: none; 
-        }
-        .footer-section ul li { 
-            margin-bottom: 0.75rem;
-        }
-        .footer-section a { 
-            color: #f3f3f3; 
-            transition: var(--transition);
-        }
-        .footer-section a:hover { 
-            color: white; 
-            padding-left: 5px;
-        }
-        .contact-info { 
-            color: #f3f3f3;
-        }
-        .contact-info p { 
-            margin-bottom: 0.75rem; 
-            display: flex; 
-            align-items: center; 
-            gap: 0.75rem;
-        }
-        .footer-bottom { 
-            border-top: 1px solid rgba(255,255,255,0.1); 
-            padding-top: 2rem; 
-            text-align: center; 
-            color: #f3f3f3;
-        }
-        
-        /* MODAL */
-        .modal { 
-            display: none; 
-            position: fixed; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            background: rgba(0,0,0,0.6); 
-            backdrop-filter: blur(4px); 
-            z-index: 2000; 
-            align-items: center; 
-            justify-content: center; 
-            padding: 1.25rem;
-        }
-        .modal.active { display: flex;}
-        .modal-content { 
-            background: white; 
-            border-radius: var(--radius-2xl); 
-            padding: 3rem; 
-            max-width: 500px; 
-            width: 100%; 
-            box-shadow: var(--shadow-lg); 
-            position: relative; 
-            animation: modalSlideIn 0.3s ease;
-        }
-        @keyframes modalSlideIn { 
-            from { 
-                opacity: 0; 
-                transform: translateY(-30px);
-            } 
-            to { 
-                opacity: 1; 
-                transform: translateY(0);
-            } 
-        }
-        .modal-close { 
-            position: absolute; 
-            top: 1.25rem; 
-            right: 1.25rem; 
-            width: 36px; 
-            height: 36px; 
-            border-radius: 50%; 
-            background: #f1f5f9; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            font-size: 1.5rem; 
-            color: var(--text); 
-            transition: var(--transition);
-        }
-        .modal-close:hover { 
-            background: #e2e8f0; 
-            transform: rotate(90deg);
-        }
-        .modal-content h3 { 
-            font-family: 'Poppins', sans-serif; 
-            font-size: 1.75rem; 
-            margin-bottom: 1rem;
-        }
-        .modal-content p { 
-            color: var(--text-light); 
-            margin-bottom: 2rem;
-        }
-        .modal-form { 
-            display: flex; 
-            flex-direction: column; 
-            gap: 1.25rem;
-        }
-        .modal-form input { 
-            padding: 1rem 1.25rem; 
-            border: 2px solid var(--border); 
-            border-radius: var(--radius); 
-            font-size: 1rem; 
-            transition: var(--transition);
-        }
-        .modal-form input:focus { 
-            outline: none; 
-            border-color: var(--brand);
-        }
-        .modal-form button { 
-            padding: 1rem 2rem; 
-            background: var(--brand); 
-            color: white; 
-            border-radius: var(--radius); 
-            font-weight: 600; 
-            font-size: 1rem; 
-            transition: var(--transition);
-        }
-        .modal-form button:hover { 
-            background: #b8001c; 
-            transform: translateY(-2px); 
-            box-shadow: var(--shadow-md);
-        }
-        
-        /* RESPONSIVE */
-        @media (min-width: 768px) {
-            .mobile-toggle { display: none;}
-            nav { display: flex;}
-            .logo-text { display: block; }
-            .value-grid { grid-template-columns: repeat(3,1fr);}
-            .product-card { min-width: calc(50% - 0.75rem);}
-            .resources-grid { grid-template-columns: repeat(2,1fr);}
-            .newsletter-form { flex-direction: row;}
-            .footer-content { grid-template-columns: 2fr 1fr 1fr 1fr;}
-            .steps-grid { gap: 4rem;}
-            .step { flex-direction: row;}
-        }
-        @media (min-width: 1024px) {
-            .steps-grid::before {
-                content: '';
-                position: absolute;
-                left: 55px;
-                top: 80px;
-                bottom: 80px;
-                width: 2px;
-                background: linear-gradient(180deg, var(--brand), var(--accent));
-                opacity: 0.2;
-            }
-        }
-        @media (min-width: 1200px) {
-            .container { padding: 0 2rem;}
-            .product-card { min-width: calc(25% - 1.125rem);}
-            .resources-grid { grid-template-columns: repeat(3,1fr);}
         }
     </style>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <header id="header">
-        <div class="container">
-            <div class="header-content">
-                <a href="#" class="logo">
-                    <img src="logo.png" alt="Denfresh Logo" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                </a>
-                <nav id="desktop-nav" aria-label="Main navigation">
-                    <a href="#main-content">Home</a>
-                    <a href="#products">Products</a>
-                    <a href="#about">About</a>
-                    <a href="#resources">Resources</a>
-                    <a href="#contact">Contact</a>
-                </nav>
-                <button class="cta-btn" onclick="window.location.href='#contact'">Enquire</button>
-                <button class="mobile-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle navigation"><div class="hamburger"><span></span><span></span><span></span></div></button>
+
+    <div class="nav-overlay"></div>
+
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Denfresh Logo">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html" class="contact-btn">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-        </div>
-        <div class="mobile-nav" id="mobile-nav">
-            <a href="#main-content">Home</a>
-            <a href="#products">Products</a>
-            <a href="#about">About</a>
-            <a href="#resources">Resources</a>
-            <a href="#contact">Contact</a>
         </div>
     </header>
-    <main id="main-content">
-        <section class="hero">
-            <div class="hero-slider" id="heroSlider">
-                <div class="hero-slide active">
-                    <img src="./composition-cleaning-objects-with-copyspace.jpg" alt="Premium cleaning products showcase">
-                </div>
-                <div class="hero-slide">
-                    <img src="./composition-cleaning-objects.jpg" alt="Industrial cleaning solutions">
-                </div>
-                <div class="hero-slide">
-                    <img src="./composition-cleaning-objects-with-copyspace.jpg" alt="Healthcare disinfection products">
-                </div>
-                <div class="hero-slide">
-                    <img src="./composition-cleaning-objects.jpg" alt="Professional glass cleaning">
-                </div>
-                <div class="hero-slide">
-                    <img src="./composition-cleaning-objects-with-copyspace.jpg" alt="Commercial kitchen cleaning">
-                </div>
-            </div>
-            <div class="hero-overlay"></div>
-            <div class="slider-controls">
-                <button class="slider-nav-btn" id="prevSlide" aria-label="Previous slide">❮</button>
-                <div class="slider-indicators" id="sliderIndicators"></div>
-                <button class="slider-nav-btn" id="nextSlide" aria-label="Next slide">❯</button>
-            </div>
-            <div class="container">
+
+    <section class="hero-section" id="home">
+        <div class="hero-slider">
+            <div class="hero-slide slide-1 active">
                 <div class="hero-content">
-                    <h1>Premium Cleaning Solutions for Professional Excellence</h1>
-                    <p class="hero-tagline">Eco-friendly, ISO-certified cleaning products designed for industrial and commercial spaces. Experience the power of innovation backed by expertise.</p>
-                    <div class="hero-ctas">
-                        <button class="btn-primary" onclick="window.location.href='#products'">Browse Products</button>
-                        <button class="btn-secondary" onclick="openCatalogModal()">Download Catalog</button>
-                    </div>
-                    <div class="trust-badges">
-                        <div class="badge"><div class="badge-icon">ISO</div><div class="badge-text">ISO Certified</div></div>
-                        <div class="badge"><div class="badge-icon">🌿</div><div class="badge-text">Eco-Friendly</div></div>
-                        <div class="badge"><div class="badge-icon">🇮🇳</div><div class="badge-text">Made in India</div></div>
+                    <h1>Professional Cleaning Solutions That Set Industry Standards</h1>
+                    <p>High-performance, eco-conscious cleaning products for industrial, healthcare, and commercial environments.</p>
+                    <div class="hero-buttons">
+                        <a href="products.html" class="btn-primary">Explore Products</a>
+                        <a href="contact.html" class="btn-secondary">Contact Our Experts</a>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <section id="about">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Why Choose Denfresh</h2>
-                    <p>We deliver superior cleaning solutions that combine cutting-edge technology, environmental responsibility, and proven results across industries.</p>
-                </div>
-                <div class="value-grid">
-                    <div class="value-card">
-                        <div class="value-icon-wrapper">
-                            <div class="value-icon-bg"></div>
-                            <div class="value-icon">🧪</div>
-                        </div>
-                        <h3>Advanced Formulation</h3>
-                        <p>Our products leverage cutting-edge chemistry and innovative ingredients for maximum cleaning power while being gentle on surfaces and safe for the environment.</p>
-                    </div>
-                    <div class="value-card">
-                        <div class="value-icon-wrapper">
-                            <div class="value-icon-bg"></div>
-                            <div class="value-icon">🌍</div>
-                        </div>
-                        <h3>Sustainable & Safe</h3>
-                        <p>Every Denfresh product is biodegradable and complies with international safety standards, ensuring peace of mind for your team and our planet.</p>
-                    </div>
-                    <div class="value-card">
-                        <div class="value-icon-wrapper">
-                            <div class="value-icon-bg"></div>
-                            <div class="value-icon">💼</div>
-                        </div>
-                        <h3>Industry Expertise</h3>
-                        <p>With 25+ years of experience serving clients across healthcare, hospitality, and manufacturing, we understand your unique cleaning challenges.</p>
+            <div class="hero-slide slide-2">
+                <div class="hero-content">
+                    <h1>Trusted by Leading Industries Across India</h1>
+                    <p>Delivering superior cleaning solutions with ISO certification and eco-friendly formulations that protect your business and environment.</p>
+                    <div class="hero-buttons">
+                        <a href="products.html" class="btn-primary">Explore Products</a>
+                        <a href="contact.html" class="btn-secondary">Contact Our Experts</a>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <section id="products" class="products-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Featured Products</h2>
-                    <p>Discover our most popular cleaning solutions designed for professional applications across diverse industries.</p>
-                </div>
-                <div class="products-carousel"><div class="products-track" id="products-track"></div></div>
-                <div class="carousel-controls">
-                    <button class="carousel-btn" id="prev-btn" aria-label="Previous product">←</button>
-                    <button class="carousel-btn" id="next-btn" aria-label="Next product">→</button>
-                </div>
-                <div class="carousel-dots" id="carousel-dots"></div>
-            </div>
-        </section>
-        
-        <section class="how-it-works-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>How It Works</h2>
-                    <p>Our streamlined process ensures you get the perfect cleaning solution with ongoing expert support.</p>
-                </div>
-                <div class="steps-grid">
-                    <div class="step">
-                        <div class="step-number-wrapper">
-                            <div class="step-number">1</div>
-                        </div>
-                        <div class="step-content">
-                            <h3>Consult & Assess</h3>
-                            <p>Our experts conduct a comprehensive assessment of your facility's cleaning needs, identifying the optimal product suite for maximum effectiveness and efficiency.</p>
-                        </div>
-                        <span class="step-icon">📋</span>
-                    </div>
-                    <div class="step">
-                        <div class="step-number-wrapper">
-                            <div class="step-number">2</div>
-                        </div>
-                        <div class="step-content">
-                            <h3>Customize Solution</h3>
-                            <p>We design a tailored cleaning program specifically for your organization, including product selection, usage protocols, and staff training for optimal results.</p>
-                        </div>
-                        <span class="step-icon">⚙️</span>
-                    </div>
-                    <div class="step">
-                        <div class="step-number-wrapper">
-                            <div class="step-number">3</div>
-                        </div>
-                        <div class="step-content">
-                            <h3>Ongoing Support</h3>
-                            <p>Enjoy continuous technical support, regular check-ins, and timely product replenishment to ensure your cleaning program delivers consistent, exceptional results.</p>
-                        </div>
-                        <span class="step-icon">🤝</span>
+            <div class="hero-slide slide-3">
+                <div class="hero-content">
+                    <h1>Innovation Meets Sustainability</h1>
+                    <p>Advanced formulations that deliver exceptional results while maintaining the highest standards of safety and environmental responsibility.</p>
+                    <div class="hero-buttons">
+                        <a href="products.html" class="btn-primary">Explore Products</a>
+                        <a href="contact.html" class="btn-secondary">Contact Our Experts</a>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <section id="resources">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Latest Resources</h2>
-                    <p>Access technical documents, safety guides, and industry insights to make informed decisions.</p>
+        </div>
+        <div class="slider-arrow arrow-left">‹</div>
+        <div class="slider-arrow arrow-right">›</div>
+        <div class="slider-controls">
+            <div class="slider-dot active"></div>
+            <div class="slider-dot"></div>
+            <div class="slider-dot"></div>
+        </div>
+    </section>
+
+    <section class="trust-bar">
+        <div class="trust-container">
+            <div class="trust-item">
+                <div class="trust-icon">✓</div>
+                <div class="trust-text">
+                    <h4>ISO Certified</h4>
+                    <p>Quality Assured</p>
                 </div>
-                <div class="resources-grid">
-                    <div class="resource-card">
-                        <div class="resource-thumb">📄</div>
-                        <div class="resource-content">
-                            <div class="resource-type">Product Catalog</div>
-                            <h3>Complete Product Range 2025</h3>
-                            <p>Comprehensive overview of our product lineup with detailed specifications and ordering information.</p>
-                            <a href="#" class="download-link">Download PDF →</a>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">🇮🇳</div>
+                <div class="trust-text">
+                    <h4>Made in India</h4>
+                    <p>Proudly Manufacturing</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">🌿</div>
+                <div class="trust-text">
+                    <h4>Eco-Friendly</h4>
+                    <p>Sustainable Solutions</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">★</div>
+                <div class="trust-text">
+                    <h4>Industry Trusted</h4>
+                    <p>Proven Excellence</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <div class="section-container">
+            <h2 class="section-title reveal">Why Leading Industries Choose Denfresh</h2>
+            <p class="section-subtitle reveal">Delivering excellence through innovation, sustainability, and unwavering commitment to quality.</p>
+            <div class="why-denfresh-grid">
+                <div class="why-card reveal">
+                    <div class="card-icon">⚗️</div>
+                    <h3>Advanced Formulations</h3>
+                    <p>Cutting-edge chemistry engineered for maximum efficacy across diverse industrial applications, ensuring superior cleaning performance with every use.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="card-icon">🌱</div>
+                    <h3>Sustainable & Safe</h3>
+                    <p>Environmentally responsible products that meet rigorous safety standards while delivering powerful cleaning results without compromise.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="card-icon">💰</div>
+                    <h3>Cost-Effective Solutions</h3>
+                    <p>Optimized formulations that reduce consumption and operational costs while maintaining premium quality and performance standards.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="card-icon">🏆</div>
+                    <h3>Industry Expertise</h3>
+                    <p>Decades of experience serving diverse sectors with specialized knowledge and tailored solutions for unique cleaning challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section industry-solutions">
+        <div class="section-container">
+            <h2 class="section-title reveal">Solutions Across Industries</h2>
+            <p class="section-subtitle reveal">Comprehensive cleaning solutions tailored to meet the specific needs of your industry.</p>
+            <div class="industry-grid">
+                <div class="industry-card reveal">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800" alt="Healthcare cleaning solutions">
+                    <div class="industry-content">
+                        <h3>Healthcare</h3>
+                        <p>Hospital-grade disinfectants and sanitizers that meet stringent healthcare standards, ensuring safe and hygienic environments for patients and staff.</p>
+                    </div>
+                </div>
+                <div class="industry-card reveal">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800" alt="Hospitality cleaning solutions">
+                    <div class="industry-content">
+                        <h3>Hospitality</h3>
+                        <p>Premium cleaning products designed for hotels and restaurants, delivering spotless results that enhance guest experiences and maintain brand reputation.</p>
+                    </div>
+                </div>
+                <div class="industry-card reveal">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800" alt="Manufacturing cleaning solutions">
+                    <div class="industry-content">
+                        <h3>Manufacturing</h3>
+                        <p>Industrial-strength cleaners for heavy-duty applications, effectively removing tough contaminants while protecting equipment and surfaces.</p>
+                    </div>
+                </div>
+                <div class="industry-card reveal">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800" alt="Commercial spaces cleaning solutions">
+                    <div class="industry-content">
+                        <h3>Commercial Spaces</h3>
+                        <p>Versatile cleaning solutions for offices, retail spaces, and public facilities that maintain professional appearance and ensure healthy work environments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section product-highlight" id="products">
+        <div class="section-container">
+            <h2 class="section-title reveal">Featured Products</h2>
+            <p class="section-subtitle reveal">Discover our range of professional cleaning solutions engineered for excellence.</p>
+            <div class="product-slider-container">
+                <div class="product-slider">
+                    <div class="product-slide">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=800" alt="Industrial cleaner product">
+                        </div>
+                        <div class="product-info">
+                            <h3>Industrial Degreaser Pro</h3>
+                            <p>High-performance degreasing solution designed for heavy-duty industrial applications. Effectively removes oil, grease, and stubborn contaminants while being safe on equipment surfaces.</p>
+                            <ul class="product-features">
+                                <li>Fast-acting formula for quick cleaning cycles</li>
+                                <li>Biodegradable and environmentally safe</li>
+                                <li>Compatible with multiple surface types</li>
+                                <li>Concentrated formula for cost efficiency</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="resource-card">
-                        <div class="resource-thumb">📋</div>
-                        <div class="resource-content">
-                            <div class="resource-type">Safety Guide</div>
-                            <h3>Material Safety Data Sheets</h3>
-                            <p>Detailed safety information and handling guidelines for all Denfresh products.</p>
-                            <a href="#" class="download-link">Download PDF →</a>
+                    <div class="product-slide">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=800" alt="Sanitizer product">
+                        </div>
+                        <div class="product-info">
+                            <h3>Medical Grade Sanitizer</h3>
+                            <p>Hospital-approved sanitizing solution that eliminates 99.9% of pathogens. Ideal for healthcare facilities, laboratories, and sensitive environments requiring the highest hygiene standards.</p>
+                            <ul class="product-features">
+                                <li>Kills bacteria, viruses, and fungi effectively</li>
+                                <li>Non-toxic and skin-safe formulation</li>
+                                <li>Quick-drying with no residue</li>
+                                <li>ISO certified for medical use</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="resource-card">
-                        <div class="resource-thumb">📊</div>
-                        <div class="resource-content">
-                            <div class="resource-type">Case Study</div>
-                            <h3>Hospital Hygiene Success Story</h3>
-                            <p>Discover how a major hospital reduced cleaning costs by 30% while improving hygiene standards with Denfresh.</p>
-                            <a href="#" class="download-link">Download PDF →</a>
+                    <div class="product-slide">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800" alt="Floor cleaner product">
+                        </div>
+                        <div class="product-info">
+                            <h3>Multi-Surface Floor Cleaner</h3>
+                            <p>Versatile floor cleaning solution suitable for all commercial and industrial flooring types. Leaves surfaces spotless with a protective shine that resists dirt and wear.</p>
+                            <ul class="product-features">
+                                <li>Works on tile, concrete, marble, and vinyl</li>
+                                <li>Anti-slip formula for safety</li>
+                                <li>Pleasant, non-overpowering fragrance</li>
+                                <li>Low-foam for machine compatibility</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <section class="newsletter-section">
-            <div class="container">
-                <div class="newsletter-content">
-                    <h2>Stay Updated</h2>
-                    <p>Subscribe to our newsletter for product updates, industry insights, and exclusive offers.</p>
-                    <form class="newsletter-form" id="newsletter-form">
-                        <input type="email" id="newsletter-email" placeholder="Enter your email address" required aria-label="Email address">
-                        <button type="submit">Subscribe</button>
-                    </form>
-                    <div class="form-message" id="newsletter-message"></div>
-                </div>
+            <div class="product-progress">
+                <div class="progress-bar active"></div>
+                <div class="progress-bar"></div>
+                <div class="progress-bar"></div>
             </div>
-        </section>
-    </main>
-    
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="#" class="logo">
-                        <img src="logo.png" alt="Denfresh Logo" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    </a>
-                    <p>Leading provider of premium cleaning solutions for industrial and commercial applications across India.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">f</a>
-                        <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
-                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+        </div>
+    </section>
+
+    <section class="section process-section">
+        <div class="section-container">
+            <h2 class="section-title reveal">Our Process</h2>
+            <p class="section-subtitle reveal">A systematic approach to delivering the perfect cleaning solution for your needs.</p>
+            <div class="process-container">
+                <div class="process-line"></div>
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Assess Requirements</h3>
+                        <p>Our experts conduct a comprehensive analysis of your facility, operations, and specific cleaning challenges to understand your unique needs and develop customized recommendations.</p>
                     </div>
                 </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#resources">Resources</a></li>
-                        <li><a href="#">Careers</a></li>
-                    </ul>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Recommend Solutions</h3>
+                        <p>Based on our assessment, we propose tailored product selections and application protocols that optimize cleaning efficiency while meeting your budget and sustainability goals.</p>
+                    </div>
                 </div>
-                <div class="footer-section">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Technical Support</a></li>
-                        <li><a href="#">Product MSDS</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <div class="contact-info">
-                        <p>📧 sales@denfresh.com</p>
-                        <p>📞 +91 98765 43210</p>
-                        <p>📍 Mumbai, Maharashtra, India</p>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Continuous Support</h3>
+                        <p>We provide ongoing technical support, training, and product optimization to ensure consistent results and maximum value from your cleaning program throughout our partnership.</p>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Denfresh. All rights reserved. | Privacy Policy | Terms & Conditions</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Denfresh Logo">
+                </div>
+                <p>Leading the industry with innovative, sustainable cleaning solutions that set new standards for performance and environmental responsibility. Trusted by businesses across India for over two decades.</p>
             </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li>Email: info@denfresh.com</li>
+                    <li>Phone: +91 1800 123 4567</li>
+                    <li>Address: Mumbai, India</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Stay updated with the latest products and industry insights.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Denfresh. All rights reserved. Professional Cleaning Solutions.</p>
         </div>
     </footer>
-    
-    <div class="modal" id="catalog-modal" role="dialog" aria-labelledby="modal-title" aria-modal="true">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeCatalogModal()" aria-label="Close modal">×</button>
-            <h3 id="modal-title">Download Product Catalog</h3>
-            <p>Enter your details to receive our complete 2025 product catalog.</p>
-            <form class="modal-form" id="catalog-form">
-                <input type="text" placeholder="Full Name" required aria-label="Full name">
-                <input type="email" placeholder="Email Address" required aria-label="Email address">
-                <input type="tel" placeholder="Phone Number" aria-label="Phone number">
-                <input type="text" placeholder="Company Name (Optional)" aria-label="Company name">
-                <button type="submit">Download Catalog</button>
-            </form>
-        </div>
-    </div>
-    
+
     <script>
-        // HERO SLIDER
-        const heroSlides = document.querySelectorAll('.hero-slide');
-        const indicatorsContainer = document.getElementById('sliderIndicators');
-        const prevSlideBtn = document.getElementById('prevSlide');
-        const nextSlideBtn = document.getElementById('nextSlide');
-        let currentSlideIndex = 0;
-        let sliderInterval;
-        
-        function createIndicators() {
-            heroSlides.forEach((_, index) => {
-                const indicator = document.createElement('button');
-                indicator.classList.add('slider-indicator');
-                if (index === 0) indicator.classList.add('active');
-                indicator.setAttribute('aria-label', `Go to slide ${index + 1}`);
-                indicator.addEventListener('click', () => goToSlide(index));
-                indicatorsContainer.appendChild(indicator);
-            });
-        }
-        
-        function goToSlide(index) {
-            heroSlides[currentSlideIndex].classList.remove('active');
-            document.querySelectorAll('.slider-indicator')[currentSlideIndex].classList.remove('active');
-            currentSlideIndex = index;
-            heroSlides[currentSlideIndex].classList.add('active');
-            document.querySelectorAll('.slider-indicator')[currentSlideIndex].classList.add('active');
-            resetSliderInterval();
-        }
-        
-        function nextSlide() {
-            const nextIndex = (currentSlideIndex + 1) % heroSlides.length;
-            goToSlide(nextIndex);
-        }
-        
-        function prevSlide() {
-            const prevIndex = (currentSlideIndex - 1 + heroSlides.length) % heroSlides.length;
-            goToSlide(prevIndex);
-        }
-        
-        function startSliderInterval() {
-            sliderInterval = setInterval(nextSlide, 5000);
-        }
-        
-        function resetSliderInterval() {
-            clearInterval(sliderInterval);
-            startSliderInterval();
-        }
-        
-        prevSlideBtn.addEventListener('click', prevSlide);
-        nextSlideBtn.addEventListener('click', nextSlide);
-        
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') prevSlide();
-            if (e.key === 'ArrowRight') nextSlide();
-        });
-        
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
-        document.querySelector('.hero').addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-        
-        document.querySelector('.hero').addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            if (touchEndX < touchStartX - 50) nextSlide();
-            if (touchEndX > touchStartX + 50) prevSlide();
-        });
-        
-        createIndicators();
-        startSliderInterval();
-        
-        // PRODUCT CAROUSEL
-        const products = [
-            {
-                id: 1,
-                name: "IndustrialPro Multi-Surface Cleaner",
-                category: "General Purpose",
-                description: "Heavy-duty cleaning solution for industrial floors, walls, and equipment. Cuts through grease and grime effortlessly.",
-                features: ["pH neutral formula", "Streak-free finish", "Concentrated 1:50 dilution"],
-                image: "./product.png"
-            },
-            {
-                id: 2,
-                name: "HospitalGrade Disinfectant",
-                category: "Healthcare",
-                description: "Medical-grade disinfectant that eliminates 99.9% of bacteria and viruses. Perfect for healthcare facilities.",
-                features: ["EPA registered", "30-second kill time", "Non-toxic formula"],
-                image: "./product.png"
-            },
-            {
-                id: 3,
-                name: "Glass & Window Crystal Clear",
-                category: "Specialty",
-                description: "Professional-grade glass cleaner that leaves surfaces sparkling without residue. Anti-fog properties included.",
-                features: ["Ammonia-free", "Anti-static coating", "UV protection"],
-                image: "./product.png"
-            },
-            {
-                id: 4,
-                name: "Kitchen Degreaser Pro",
-                category: "Food Service",
-                description: "Powerful degreaser designed for commercial kitchens. Safe for food-contact surfaces when rinsed.",
-                features: ["Food-safe certified", "Fast-acting formula", "Pleasant citrus scent"],
-                image: "./product.png"
-            }
-        ];
-        
-        const mobileToggle = document.querySelector('.mobile-toggle');
-        const mobileNav = document.getElementById('mobile-nav');
-        mobileToggle.addEventListener('click', () => {
-            const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
-            mobileToggle.setAttribute('aria-expanded', !isExpanded);
-            mobileNav.classList.toggle('active');
-        });
-        document.querySelectorAll('.mobile-nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileToggle.setAttribute('aria-expanded', 'false');
-                mobileNav.classList.remove('active');
-            });
-        });
-        
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 100) {
-                header.classList.add('scrolled');
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navOverlay = document.querySelector('.nav-overlay');
+        const body = document.body;
+
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            
+            if (navLinks.classList.contains('active')) {
+                body.style.overflow = 'hidden';
             } else {
-                header.classList.remove('scrolled');
+                body.style.overflow = '';
             }
-        });
-        
-        const productsTrack = document.getElementById('products-track');
-        const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
-        const dotsContainer = document.getElementById('carousel-dots');
-        let currentIndex = 0;
-        
-        function renderProducts() {
-            productsTrack.innerHTML = products.map(product => `
-                <div class="product-card">
-                    <img src="${product.image}" alt="${product.name}" class="product-image" loading="lazy">
-                    <div class="product-content">
-                        <div class="product-category">${product.category}</div>
-                        <h3>${product.name}</h3>
-                        <p>${product.description}</p>
-                        <ul class="product-features">
-                            ${product.features.map(f => `<li>${f}</li>`).join('')}
-                        </ul>
-                    </div>
-                </div>
-            `).join('');
-            dotsContainer.innerHTML = products.map((_, i) =>
-                `<button class="dot ${i === 0 ? 'active' : ''}" data-index="${i}" aria-label="Go to product ${i + 1}"></button>`
-            ).join('');
-            document.querySelectorAll('.dot').forEach(dot => {
-                dot.addEventListener('click', (e) => {
-                    currentIndex = parseInt(e.target.dataset.index);
-                    updateCarousel();
-                });
-            });
         }
-        
-        function updateCarousel() {
-            const cardWidth = productsTrack.querySelector('.product-card').offsetWidth;
-            const gap = 24;
-            const offset = (cardWidth + gap) * currentIndex;
-            productsTrack.style.transform = `translateX(-${offset}px)`;
-            document.querySelectorAll('.dot').forEach((dot, i) => {
-                dot.classList.toggle('active', i === currentIndex);
-            });
-            prevBtn.disabled = currentIndex === 0;
-            nextBtn.disabled = currentIndex >= products.length - getVisibleCards();
-        }
-        
-        function getVisibleCards() {
-            if (window.innerWidth >= 1200) return 4;
-            if (window.innerWidth >= 768) return 2;
-            return 1;
-        }
-        
-        prevBtn.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateCarousel();
-            }
-        });
-        
-        nextBtn.addEventListener('click', () => {
-            if (currentIndex < products.length - getVisibleCards()) {
-                currentIndex++;
-                updateCarousel();
-            }
-        });
-        
-        window.addEventListener('resize', () => {
-            currentIndex = 0;
-            updateCarousel();
-        });
-        
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#' && href !== '#catalog-modal') {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        const headerHeight = header.offsetHeight;
-                        const targetPosition = target.offsetTop - headerHeight - 20;
-                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-                    }
+
+        hamburger.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', toggleMenu);
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 968) {
+                    toggleMenu();
                 }
             });
         });
-        
-        const newsletterForm = document.getElementById('newsletter-form');
-        const newsletterEmail = document.getElementById('newsletter-email');
-        const newsletterMessage = document.getElementById('newsletter-message');
-        newsletterForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = newsletterEmail.value.trim();
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                newsletterMessage.textContent = '⚠️ Please enter a valid email address.';
-                newsletterMessage.style.color = '#fbbf24';
-                return;
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 968) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                navOverlay.classList.remove('active');
+                body.style.overflow = '';
             }
-            newsletterMessage.textContent = '✓ Thank you! Check your inbox for confirmation.';
-            newsletterMessage.style.color = 'white';
-            newsletterEmail.value = '';
-            setTimeout(() => {
-                newsletterMessage.textContent = '';
-            }, 5000);
         });
-        
-        const catalogModal = document.getElementById('catalog-modal');
-        const catalogForm = document.getElementById('catalog-form');
-        
-        function openCatalogModal() {
-            catalogModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            setTimeout(() => {
-                catalogForm.querySelector('input').focus();
-            }, 100);
+
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        const sliderDots = document.querySelectorAll('.slider-dot');
+        const arrowLeft = document.querySelector('.arrow-left');
+        const arrowRight = document.querySelector('.arrow-right');
+        let currentSlide = 0;
+        let slideInterval;
+
+        function showSlide(index) {
+            heroSlides.forEach(slide => slide.classList.remove('active'));
+            sliderDots.forEach(dot => dot.classList.remove('active'));
+            
+            if (index >= heroSlides.length) currentSlide = 0;
+            if (index < 0) currentSlide = heroSlides.length - 1;
+            
+            heroSlides[currentSlide].classList.add('active');
+            sliderDots[currentSlide].classList.add('active');
         }
-        
-        function closeCatalogModal() {
-            catalogModal.classList.remove('active');
-            document.body.style.overflow = '';
+
+        function nextSlide() {
+            currentSlide++;
+            showSlide(currentSlide);
         }
-        
-        catalogModal.addEventListener('click', (e) => {
-            if (e.target === catalogModal) {
-                closeCatalogModal();
+
+        function prevSlide() {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+
+        function startSlideshow() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        function stopSlideshow() {
+            clearInterval(slideInterval);
+        }
+
+        arrowRight.addEventListener('click', () => {
+            stopSlideshow();
+            nextSlide();
+            startSlideshow();
+        });
+
+        arrowLeft.addEventListener('click', () => {
+            stopSlideshow();
+            prevSlide();
+            startSlideshow();
+        });
+
+        sliderDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                stopSlideshow();
+                currentSlide = index;
+                showSlide(currentSlide);
+                startSlideshow();
+            });
+        });
+
+        document.querySelector('.hero-section').addEventListener('mouseenter', stopSlideshow);
+        document.querySelector('.hero-section').addEventListener('mouseleave', startSlideshow);
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.querySelector('.hero-section').addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.querySelector('.hero-section').addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 50) {
+                stopSlideshow();
+                nextSlide();
+                startSlideshow();
+            }
+            if (touchEndX - touchStartX > 50) {
+                stopSlideshow();
+                prevSlide();
+                startSlideshow();
             }
         });
-        
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && catalogModal.classList.contains('active')) {
-                closeCatalogModal();
-            }
+
+        startSlideshow();
+
+        const productSlider = document.querySelector('.product-slider');
+        const progressBars = document.querySelectorAll('.progress-bar');
+        let currentProduct = 0;
+
+        function showProduct(index) {
+            if (index >= 3) currentProduct = 0;
+            if (index < 0) currentProduct = 2;
+            
+            productSlider.style.transform = `translateX(-${currentProduct * 100}%)`;
+            
+            progressBars.forEach(bar => bar.classList.remove('active'));
+            progressBars[currentProduct].classList.add('active');
+        }
+
+        function nextProduct() {
+            currentProduct++;
+            showProduct(currentProduct);
+        }
+
+        setInterval(nextProduct, 4000);
+
+        progressBars.forEach((bar, index) => {
+            bar.addEventListener('click', () => {
+                currentProduct = index;
+                showProduct(currentProduct);
+            });
         });
-        
-        catalogForm.addEventListener('submit', (e) => {
+
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        document.querySelectorAll('.process-step').forEach(el => observer.observe(el));
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        document.querySelector('.newsletter-form').addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Thank you! Your catalog download will begin shortly.');
-            closeCatalogModal();
-            catalogForm.reset();
-        });
-        
-        document.addEventListener('DOMContentLoaded', () => {
-            renderProducts();
-            updateCarousel();
+            const email = e.target.querySelector('input').value;
+            alert('Thank you for subscribing! We will keep you updated.');
+            e.target.reset();
         });
     </script>
+
 </body>
 </html>

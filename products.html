@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse Denfresh professional cleaning products - engineered for industrial, healthcare, and commercial applications. ISO certified, eco-friendly solutions.">
+    <title>Products - Denfresh Professional Cleaning Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #D32F2F;
+            --dark-red: #B71C1C;
+            --accent-red: #C62828;
+            --white: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --text-dark: #212121;
+            --text-gray: #616161;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-red);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--primary-red);
+        }
+
+        .contact-btn {
+            background: var(--primary-red);
+            color: var(--white);
+            padding: 0.7rem 1.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+        }
+
+        .contact-btn:hover {
+            background: var(--dark-red);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(211, 47, 47, 0.4);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-red);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .page-header {
+            margin-top: 80px;
+            padding: 4rem 2rem 3rem;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.15rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .filter-section {
+            padding: 2rem 2rem 0;
+            background: var(--white);
+        }
+
+        .filter-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .filter-btn {
+            padding: 0.7rem 1.8rem;
+            background: var(--white);
+            color: var(--text-dark);
+            border: 2px solid #E0E0E0;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary-red);
+            color: var(--primary-red);
+        }
+
+        .filter-btn.active {
+            background: var(--primary-red);
+            color: var(--white);
+            border-color: var(--primary-red);
+        }
+
+        .products-section {
+            padding: 3rem 2rem 5rem;
+            background: var(--white);
+        }
+
+        .products-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            border-color: var(--primary-red);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background: var(--light-gray);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-category {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-red);
+            margin-bottom: 0.8rem;
+        }
+
+        .product-name {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .product-description {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .product-features {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .product-features li {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+        }
+
+        .product-features li::before {
+            content: '✓';
+            color: var(--primary-red);
+            font-weight: bold;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -20%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 2rem;
+        }
+
+        .cta-btn {
+            background: var(--white);
+            color: var(--primary-red);
+            padding: 1.2rem 3rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+        }
+
+        .footer {
+            background: linear-gradient(135deg, var(--dark-red) 0%, #8B0000 100%);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo img {
+            height: 70px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-column p {
+            line-height: 1.8;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            padding-left: 5px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+
+        .newsletter-form button {
+            padding: 0.8rem 1.5rem;
+            background: var(--white);
+            color: var(--primary-red);
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0.8;
+        }
+
+        .nav-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        @media (max-width: 1200px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 968px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: var(--white);
+                flex-direction: column;
+                padding: 6rem 2rem 3rem;
+                transition: left 0.3s ease;
+                box-shadow: 2px 0 20px rgba(0,0,0,0.1);
+                align-items: flex-start;
+                overflow-y: auto;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 0.8rem 0;
+                width: 100%;
+            }
+
+            .nav-links .contact-btn {
+                display: block;
+                text-align: center;
+                margin-top: 1rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .filter-btn {
+                width: 100%;
+            }
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-gray);
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-overlay"></div>
+
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Denfresh Logo">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html" class="contact-btn">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <h1>Our Professional Cleaning Products</h1>
+        <p>Engineered for industrial, healthcare, and commercial applications.</p>
+    </section>
+
+    <section class="filter-section">
+        <div class="filter-container">
+            <button class="filter-btn active" data-category="all">All Products</button>
+            <button class="filter-btn" data-category="General Purpose">General Purpose</button>
+            <button class="filter-btn" data-category="Healthcare">Healthcare</button>
+            <button class="filter-btn" data-category="Specialty">Specialty</button>
+            <button class="filter-btn" data-category="Food Service">Food Service</button>
+        </div>
+    </section>
+
+    <section class="products-section">
+        <div class="products-container">
+            <div class="products-grid" id="productsGrid"></div>
+            <div class="no-results" id="noResults" style="display: none;">No products found in this category.</div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Denfresh Logo">
+                </div>
+                <p>Leading the industry with innovative, sustainable cleaning solutions that set new standards for performance and environmental responsibility. Trusted by businesses across India for over two decades.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li>Email: info@denfresh.com</li>
+                    <li>Phone: +91 1800 123 4567</li>
+                    <li>Address: Mumbai, India</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Stay updated with the latest products and industry insights.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Denfresh. All rights reserved. Professional Cleaning Solutions.</p>
+        </div>
+    </footer>
+
+    <script>
+        const products = [
+            {
+                category: "General Purpose",
+                name: "Multi-Surface Cleaner Pro",
+                description: "Versatile cleaning solution for all commercial surfaces including floors, walls, and countertops.",
+                image: "https://images.unsplash.com/photo-1585421514738-01798e348b17?w=500",
+                features: [
+                    "Works on multiple surface types",
+                    "Streak-free finish",
+                    "Pleasant fresh fragrance",
+                    "Biodegradable formula"
+                ]
+            },
+            {
+                category: "General Purpose",
+                name: "Industrial Degreaser Heavy Duty",
+                description: "Powerful degreasing solution for removing oil, grease, and stubborn industrial contaminants.",
+                image: "https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=500",
+                features: [
+                    "Fast-acting formula",
+                    "Safe on equipment surfaces",
+                    "Concentrated for economy",
+                    "Water-based and eco-friendly"
+                ]
+            },
+            {
+                category: "General Purpose",
+                name: "Glass & Window Cleaner",
+                description: "Professional-grade glass cleaner that delivers crystal-clear, streak-free results on all glass surfaces.",
+                image: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=500",
+                features: [
+                    "Ammonia-free formula",
+                    "Anti-static properties",
+                    "Quick-drying",
+                    "Suitable for mirrors and chrome"
+                ]
+            },
+            {
+                category: "General Purpose",
+                name: "Floor Cleaner Premium",
+                description: "Advanced floor cleaning solution suitable for tile, vinyl, concrete, and marble flooring in commercial spaces.",
+                image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=500",
+                features: [
+                    "Low-foam formula",
+                    "Anti-slip safety coating",
+                    "Machine and mop compatible",
+                    "Long-lasting shine"
+                ]
+            },
+            {
+                category: "Healthcare",
+                name: "Medical Grade Disinfectant",
+                description: "Hospital-approved disinfectant that eliminates 99.9% of bacteria, viruses, and pathogens.",
+                image: "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=500",
+                features: [
+                    "Kills bacteria and viruses",
+                    "ISO certified medical grade",
+                    "Non-toxic formulation",
+                    "Quick contact time"
+                ]
+            },
+            {
+                category: "Healthcare",
+                name: "Hand Sanitizer Gel",
+                description: "Alcohol-based hand sanitizer gel for effective hand hygiene in healthcare and commercial settings.",
+                image: "https://images.unsplash.com/photo-1584483766114-2cea6facdf57?w=500",
+                features: [
+                    "70% alcohol content",
+                    "Moisturizing agents included",
+                    "Quick-drying formula",
+                    "Dermatologically tested"
+                ]
+            },
+            {
+                category: "Healthcare",
+                name: "Surface Sanitizer Spray",
+                description: "Ready-to-use surface sanitizer for high-touch areas in hospitals, clinics, and healthcare facilities.",
+                image: "https://images.unsplash.com/photo-1603052054924-cd24a7843853?w=500",
+                features: [
+                    "No-rinse formula",
+                    "Safe for medical equipment",
+                    "Broad-spectrum efficacy",
+                    "Approved for food contact surfaces"
+                ]
+            },
+            {
+                category: "Healthcare",
+                name: "Instrument Cleaner Concentrate",
+                description: "Specialized cleaning solution for medical instruments and surgical tools requiring thorough sterilization.",
+                image: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=500",
+                features: [
+                    "Removes organic matter",
+                    "Non-corrosive formula",
+                    "Compatible with autoclaves",
+                    "Highly concentrated"
+                ]
+            },
+            {
+                category: "Specialty",
+                name: "Stainless Steel Polish",
+                description: "Premium polish for stainless steel surfaces in commercial kitchens and industrial environments.",
+                image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=500",
+                features: [
+                    "Fingerprint resistant",
+                    "Protective coating",
+                    "Non-greasy finish",
+                    "Anti-corrosion properties"
+                ]
+            },
+            {
+                category: "Specialty",
+                name: "Carpet & Upholstery Cleaner",
+                description: "Deep-cleaning solution for carpets and upholstery in offices, hotels, and commercial spaces.",
+                image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500",
+                features: [
+                    "Removes tough stains",
+                    "Fast-drying formula",
+                    "Color-safe for all fabrics",
+                    "Odor neutralizer included"
+                ]
+            },
+            {
+                category: "Specialty",
+                name: "Washroom Cleaner & Descaler",
+                description: "Powerful bathroom cleaner that removes limescale, soap scum, and watermarks from all washroom surfaces.",
+                image: "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=500",
+                features: [
+                    "Removes limescale effectively",
+                    "Fresh fragrance",
+                    "Safe on chrome and tiles",
+                    "Anti-bacterial formula"
+                ]
+            },
+            {
+                category: "Specialty",
+                name: "Odor Eliminator Spray",
+                description: "Professional odor neutralizer for eliminating unpleasant smells in commercial and industrial environments.",
+                image: "https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=500",
+                features: [
+                    "Neutralizes not masks odors",
+                    "Long-lasting effect",
+                    "Safe for occupied spaces",
+                    "Multiple fragrance options"
+                ]
+            },
+            {
+                category: "Food Service",
+                name: "Kitchen Degreaser Plus",
+                description: "Food-safe degreaser specifically formulated for commercial kitchen equipment and food preparation areas.",
+                image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=500",
+                features: [
+                    "NSF certified food-safe",
+                    "Cuts through baked-on grease",
+                    "Rinses clean easily",
+                    "Works in hot environments"
+                ]
+            },
+            {
+                category: "Food Service",
+                name: "Dish Washing Liquid Industrial",
+                description: "Concentrated dish washing liquid for high-volume commercial kitchens and food service operations.",
+                image: "https://images.unsplash.com/photo-1523618408086-91babcf21d6e?w=500",
+                features: [
+                    "High-foam formula",
+                    "Gentle on hands",
+                    "Removes food residue effectively",
+                    "Economic concentrate"
+                ]
+            },
+            {
+                category: "Food Service",
+                name: "Oven & Grill Cleaner",
+                description: "Heavy-duty cleaner for ovens, grills, and cooking equipment in commercial kitchens.",
+                image: "https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=500",
+                features: [
+                    "Removes carbonized deposits",
+                    "Food-safe after rinsing",
+                    "Works on cold or warm surfaces",
+                    "Non-corrosive to metal"
+                ]
+            },
+            {
+                category: "Food Service",
+                name: "Food Contact Surface Sanitizer",
+                description: "No-rinse sanitizer approved for direct food contact surfaces in kitchens and food processing areas.",
+                image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=500",
+                features: [
+                    "No-rinse required",
+                    "Kills foodborne pathogens",
+                    "FDA approved",
+                    "Fast-acting formula"
+                ]
+            },
+            {
+                category: "General Purpose",
+                name: "Toilet Bowl Cleaner Gel",
+                description: "Thick gel formula that clings to toilet bowl surfaces for effective cleaning and disinfection.",
+                image: "https://images.unsplash.com/photo-1585421514738-01798e348b17?w=500",
+                features: [
+                    "Thick clinging formula",
+                    "Removes stains and deposits",
+                    "Fresh fragrance",
+                    "Kills germs effectively"
+                ]
+            },
+            {
+                category: "Specialty",
+                name: "Wood Floor Cleaner",
+                description: "pH-neutral cleaner designed specifically for wooden floors in offices and commercial buildings.",
+                image: "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=500",
+                features: [
+                    "pH-neutral formula",
+                    "Preserves wood finish",
+                    "No residue buildup",
+                    "Anti-slip coating"
+                ]
+            },
+            {
+                category: "Healthcare",
+                name: "Laundry Disinfectant",
+                description: "Additive disinfectant for commercial laundry operations in hospitals and hospitality sectors.",
+                image: "https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?w=500",
+                features: [
+                    "Kills germs in wash cycle",
+                    "Works in cold water",
+                    "Fabric-safe formula",
+                    "Removes odors effectively"
+                ]
+            },
+            {
+                category: "General Purpose",
+                name: "Air Freshener Aerosol",
+                description: "Commercial air freshener spray for offices, restrooms, and public spaces.",
+                image: "https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?w=500",
+                features: [
+                    "Long-lasting fragrance",
+                    "Odor neutralizing",
+                    "Multiple scent options",
+                    "Non-staining formula"
+                ]
+            },
+            {
+                category: "Specialty",
+                name: "Concrete Floor Cleaner",
+                description: "Heavy-duty cleaner for concrete floors in warehouses, factories, and industrial facilities.",
+                image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=500",
+                features: [
+                    "Removes oil stains",
+                    "High alkaline formula",
+                    "Works on porous concrete",
+                    "Machine compatible"
+                ]
+            },
+            {
+                category: "Food Service",
+                name: "Coffee Machine Descaler",
+                description: "Specialized descaling solution for coffee machines and beverage equipment.",
+                image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500",
+                features: [
+                    "Removes mineral deposits",
+                    "Food-safe ingredients",
+                    "Extends machine life",
+                    "Easy application"
+                ]
+            },
+            {
+                category: "Healthcare",
+                name: "Dental Instrument Cleaner",
+                description: "Professional cleaning solution for dental instruments and equipment.",
+                image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=500",
+                features: [
+                    "Removes organic debris",
+                    "Non-corrosive to instruments",
+                    "Enzymatic formula",
+                    "Pre-sterilization cleaning"
+                ]
+            },
+            {
+                category: "Specialty",
+                name: "Vehicle Wash Concentrate",
+                description: "Concentrated vehicle washing solution for commercial fleet cleaning operations.",
+                image: "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=500",
+                features: [
+                    "High-foam formula",
+                    "Removes road grime",
+                    "Biodegradable",
+                    "Streak-free finish"
+                ]
+            },
+            {
+                category: "General Purpose",
+                name: "Drain Maintainer",
+                description: "Enzymatic drain maintainer for preventing clogs in commercial plumbing systems.",
+                image: "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=500",
+                features: [
+                    "Breaks down organic matter",
+                    "Safe for all pipes",
+                    "Regular maintenance formula",
+                    "Eliminates odors"
+                ]
+            },
+            {
+                category: "Food Service",
+                name: "Ice Machine Cleaner",
+                description: "Specialized cleaner for ice machines and beverage dispensers in food service operations.",
+                image: "https://images.unsplash.com/photo-1564859228273-274232fdb516?w=500",
+                features: [
+                    "Removes scale and slime",
+                    "Food-safe formula",
+                    "Improves ice quality",
+                    "Easy to use"
+                ]
+            },
+            {
+                category: "Healthcare",
+                name: "Operating Room Cleaner",
+                description: "Hospital-grade cleaner specifically designed for operating rooms and sterile environments.",
+                image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=500",
+                features: [
+                    "Ultra-low residue",
+                    "Kills surgical pathogens",
+                    "Compatible with surfaces",
+                    "Compliant with protocols"
+                ]
+            },
+            {
+                category: "Specialty",
+                name: "Granite & Marble Cleaner",
+                description: "Premium cleaner for natural stone surfaces in commercial and hospitality settings.",
+                image: "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=500",
+                features: [
+                    "pH-neutral formula",
+                    "Enhances natural shine",
+                    "No streaking",
+                    "Protects stone surface"
+                ]
+            }
+        ];
+
+        const productsGrid = document.getElementById('productsGrid');
+        const noResults = document.getElementById('noResults');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        let currentCategory = 'all';
+
+        function renderProducts(category) {
+            productsGrid.innerHTML = '';
+            
+            const filteredProducts = category === 'all' 
+                ? products 
+                : products.filter(p => p.category === category);
+
+            if (filteredProducts.length === 0) {
+                productsGrid.style.display = 'none';
+                noResults.style.display = 'block';
+                return;
+            }
+
+            productsGrid.style.display = 'grid';
+            noResults.style.display = 'none';
+
+            filteredProducts.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                
+                const featuresHTML = product.features.map(f => `<li>${f}</li>`).join('');
+                
+                card.innerHTML = `
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">${product.category}</div>
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-description">${product.description}</p>
+                        <ul class="product-features">${featuresHTML}</ul>
+                    </div>
+                `;
+                
+                productsGrid.appendChild(card);
+            });
+        }
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const category = btn.getAttribute('data-category');
+                currentCategory = category;
+                renderProducts(category);
+            });
+        });
+
+        renderProducts('all');
+
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navOverlay = document.querySelector('.nav-overlay');
+        const body = document.body;
+
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            
+            if (navLinks.classList.contains('active')) {
+                body.style.overflow = 'hidden';
+            } else {
+                body.style.overflow = '';
+            }
+        }
+
+        hamburger.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', toggleMenu);
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 968) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 968) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                navOverlay.classList.remove('active');
+                body.style.overflow = '';
+            }
+        });
+
+        document.querySelector('.newsletter-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = e.target.querySelector('input').value;
+            alert('Thank you for subscribing! We will keep you updated.');
+            e.target.reset();
+        });
+    </script>
+
+</body>
+</html>
